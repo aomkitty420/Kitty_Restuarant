@@ -148,6 +148,30 @@
                     container.innerHTML = '<p style="text-align:center; font-size:1.5rem;">No menu items found.</p>';
                     return;
                 }
+                const foodImages = {
+                    'Pad Thai': 'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=400&q=80',
+                    'Green Curry': 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=400&q=80',
+                    'Basil Fried Rice': 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=400&q=80',
+                    'Massaman Curry': 'https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=400&q=80',
+                    'Tom Yum Noodles': 'https://images.unsplash.com/photo-1547928576-a4a33237eceb?auto=format&fit=crop&w=400&q=80',
+                    'Spring Rolls': 'https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=400&q=80',
+                    'Chicken Satay': 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=400&q=80',
+                    'Fried Calamari': 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=400&q=80',
+                    'Corn Fritters': 'https://images.unsplash.com/photo-1528751014936-863e6e7a319c?auto=format&fit=crop&w=400&q=80',
+                    'Pork Dumplings': 'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=400&q=80',
+                    'Crispy Tofu': 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80',
+                    'Thai Iced Tea': 'https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&w=400&q=80',
+                    'Fresh Coconut Water': 'https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=400&q=80',
+                    'Lemongrass Juice': 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&q=80',
+                    'Mango Sticky Rice': 'https://images.unsplash.com/photo-1526234362653-3b75a0c07438?auto=format&fit=crop&w=400&q=80',
+                    'Coconut Ice Cream': 'https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=400&q=80',
+                    'Fried Bananas': 'https://images.unsplash.com/photo-1566454419290-2823156a5ec9?auto=format&fit=crop&w=400&q=80',
+                    'Thai Custard': 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=400&q=80',
+                    'Sweet Ginger Soup': 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=400&q=80',
+                    'Durian with Sticky Rice': 'https://images.unsplash.com/photo-1526234362653-3b75a0c07438?auto=format&fit=crop&w=400&q=80',
+                    'Red Ruby in Coconut Milk': 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=400&q=80'
+                };
+
                 const categories = [...new Set(data.menu.map(item => item.category))];
                 
                 categories.forEach(cat => {
@@ -164,12 +188,8 @@
 
                     const items = data.menu.filter(item => item.category === cat);
                     items.forEach(item => {
-                        // Category-based placeholder images
-                        let imageUrl = 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=400&q=80'; // Default Thai food
-                        if (cat === 'Main Dish') imageUrl = 'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=400&q=80';
-                        if (cat === 'Appetizer') imageUrl = 'https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=400&q=80';
-                        if (cat === 'Drink') imageUrl = 'https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=400&q=80';
-                        if (cat === 'Dessert') imageUrl = 'https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=400&q=80';
+                        // Use specific image or default to a Thai food placeholder
+                        const imageUrl = foodImages[item.name] || 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=400&q=80';
 
                         grid.innerHTML += `
                             <div class="menu-item">
