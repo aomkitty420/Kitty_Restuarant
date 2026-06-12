@@ -24,21 +24,30 @@ This file serves as a memory bridge for the next Gemini CLI session. We are in t
 
 ---
 
-## ⏳ In Progress: VS Code & GitHub Integration
-- **Status:** Git has been installed on the machine, but the PATH is not yet refreshed in this terminal session.
-- **Pending Tasks:**
-  1. **Initialize Git:** Run `git init` and commit current files.
-  2. **GitHub Storage:** Connect to the user's GitHub account and push the repository.
-  3. **VS Code Preview:** Confirm `code .` command works to open the project directly from the CLI.
+## ✅ Completed: VS Code & GitHub Integration
+- **Status:** Git initialized, committed, and pushed to GitHub.
+- **Remote Repo:** `https://github.com/aomkitty420/Kitty_Restuarant`
+- **VS Code:** Verified `code .` works.
 
-## 🔜 Future Topics
-- **Topic 3:** Create a simple Server API (CRUD operations for the menu).
-- **Topic 4:** Upload the database to Cloudflare.
+## ✅ Completed: Topic 3 - Server API (CRUD)
+- **Features:**
+  - `GET /api/menu`: List all menu items.
+  - `GET /api/menu/:id`: Get specific item.
+  - `POST /api/menu`: Create new item.
+  - `PUT /api/menu/:id`: Update existing item.
+  - `DELETE /api/menu/:id`: Remove item.
+  - `GET /api/transactions`: List all transactions.
+- **Verification:** Built-in tests in `test_api.js` passed successfully.
+
+## ⏳ In Progress: Upload the database to Cloudflare
+- **Status:** Topic 4 is next.
+- **Pending Tasks:**
+  1. Research Cloudflare D1 or R2 for database hosting.
+  2. Implement database migration/upload strategy.
 
 ---
 
 ## Instructions for Gemini CLI (Next Session)
 1. Read this file to regain context.
-2. Run `git --version` to verify the new PATH is active.
-3. Help the user initialize a Git repo and push to GitHub.
-4. Continue with Topic 3: Server API.
+2. Proceed with Topic 4: Upload the database to Cloudflare.
+3. Help the user set up Cloudflare D1 and migrate the SQLite database.
