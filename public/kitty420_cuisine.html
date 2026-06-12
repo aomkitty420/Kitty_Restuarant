@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitty420 Cuisine | Italian Style Thai Fusion (Standalone)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --italian-red: #ce2b37;
+            --italian-yellow: #f4db11;
+            --italian-green: #008c45;
+            --dark-text: #222;
+            --light-bg: #fffcf2;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-bg);
+            margin: 0;
+            color: var(--dark-text);
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero {
+            background: linear-gradient(rgba(206, 43, 55, 0.8), rgba(206, 43, 55, 0.8)), url('https://images.unsplash.com/photo-1541167760496-1628856ab752?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--italian-yellow);
+            text-align: center;
+            border-bottom: 10px solid var(--italian-yellow);
+        }
+        .hero h1 {
+            font-size: 5rem;
+            margin: 0;
+            text-shadow: 3px 3px 0px var(--dark-text);
+            font-style: italic;
+        }
+        .cta-btn {
+            background-color: var(--italian-yellow);
+            color: var(--italian-red);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .cta-btn:hover {
+            transform: scale(1.05);
+            background-color: white;
+        }
+        .reservation-info {
+            display: none;
+            margin-top: 1rem;
+            font-size: 1.8rem;
+            background: white;
+            color: var(--italian-red);
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 3px solid var(--italian-yellow);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+        .menu-section {
+            margin-bottom: 4rem;
+        }
+        .category-title {
+            color: var(--italian-red);
+            font-size: 2.5rem;
+            border-bottom: 4px solid var(--italian-yellow);
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .menu-item {
+            background: white;
+            padding: 1.5rem;
+            border-left: 5px solid var(--italian-red);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .menu-item h3 {
+            margin-top: 0;
+            color: var(--italian-red);
+            font-size: 1.4rem;
+        }
+        .menu-item .price {
+            color: var(--italian-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        footer {
+            background-color: var(--italian-red);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border-top: 5px solid var(--italian-yellow);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Kitty420 Cuisine</h1>
+        <p style="font-size: 1.5rem; color: white;">Italian Passion. Thai Soul & Sensation.</p>
+        <button class="cta-btn" onclick="showReservation()">Contact Us</button>
+        <div id="reservation" class="reservation-info">Reservation: 040-9830-33</div>
+    </div>
+
+    <div class="container">
+        <div id="menu-sections">
+            <!-- Dynamically loaded -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Kitty420 Cuisine. All rights reserved. (Validation Copy)</p>
+    </footer>
+
+    <script>
+        function showReservation() {
+            document.getElementById('reservation').style.display = 'block';
+        }
+
+        // EMBEDDED DATA FOR STANDALONE VALIDATION
+        const menuData = [{"id":1,"name":"Pad Thai","category":"Main Dish","price":12.5},{"id":2,"name":"Green Curry","category":"Main Dish","price":13},{"id":3,"name":"Basil Fried Rice","category":"Main Dish","price":11},{"id":4,"name":"Massaman Curry","category":"Main Dish","price":14.5},{"id":5,"name":"Tom Yum Noodles","category":"Main Dish","price":12},{"id":6,"name":"Spring Rolls","category":"Appetizer","price":6},{"id":7,"name":"Chicken Satay","category":"Appetizer","price":8.5},{"id":8,"name":"Fried Calamari","category":"Appetizer","price":9},{"id":9,"name":"Corn Fritters","category":"Appetizer","price":5.5},{"id":10,"name":"Pork Dumplings","category":"Appetizer","price":7},{"id":11,"name":"Crispy Tofu","category":"Appetizer","price":5},{"id":12,"name":"Thai Iced Tea","category":"Drink","price":4.5},{"id":13,"name":"Fresh Coconut Water","category":"Drink","price":5.5},{"id":14,"name":"Lemongrass Juice","category":"Drink","price":4},{"id":15,"name":"Mango Sticky Rice","category":"Dessert","price":8},{"id":16,"name":"Coconut Ice Cream","category":"Dessert","price":6},{"id":17,"name":"Fried Bananas","category":"Dessert","price":5.5},{"id":18,"name":"Thai Custard","category":"Dessert","price":6.5},{"id":19,"name":"Sweet Ginger Soup","category":"Dessert","price":5},{"id":20,"name":"Durian with Sticky Rice","category":"Dessert","price":10},{"id":21,"name":"Red Ruby in Coconut Milk","category":"Dessert","price":7.5}];
+
+        function renderMenu(data) {
+            const container = document.getElementById('menu-sections');
+            const categories = [...new Set(data.map(item => item.category))];
+            
+            categories.forEach(cat => {
+                const section = document.createElement('div');
+                section.className = 'menu-section';
+                
+                const title = document.createElement('h2');
+                title.className = 'category-title';
+                title.innerText = cat;
+                section.appendChild(title);
+
+                const grid = document.createElement('div');
+                grid.className = 'menu-grid';
+
+                const items = data.filter(item => item.category === cat);
+                items.forEach(item => {
+                    grid.innerHTML += `
+                        <div class="menu-item">
+                            <h3>${item.name}</h3>
+                            <p class="price">$${item.price.toFixed(2)}</p>
+                        </div>
+                    `;
+                });
+
+                section.appendChild(grid);
+                container.appendChild(section);
+            });
+        }
+
+        // Initialize with embedded data
+        renderMenu(menuData);
+    </script>
+</body>
+</html>
